@@ -11,7 +11,7 @@
     "prebuild": "npm run clean",
     "lint:fix": "eslint . --fix",
     "migrate:up": "db-migrate up",
-    "start": "node build/server.ts",
+    "start": "node build/server.js",
     "seed": "node scripts/seedup.js",
     "migrate:down": "db-migrate down",
     "teardown": "node scripts/teardown.js",
