@@ -88,7 +88,7 @@ this `NODE_ENV=dev`
 
 **Important Note**
 
-> The commnads `seed & teardown` will propmt you to provide the database password.
+> The commnads `seed & teardown` will prompt you to provide the database password.
 
 ### Coverage
 
