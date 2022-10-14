@@ -10,11 +10,11 @@
     "clean": "shx rm -rf build",
     "prebuild": "npm run clean",
     "lint:fix": "eslint . --fix",
-    "migrate:up": "db-migrate up",
     "start": "node build/server.js",
     "seed": "node scripts/seedup.js",
-    "migrate:down": "db-migrate down",
     "teardown": "node scripts/teardown.js",
+    "migrate:up": "db-migrate --env test up",
+    "migrate:down": "db-migrate --env test down",
     "format": "prettier \"src/**/*.ts\" --write",
     "dev": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\""
   },
