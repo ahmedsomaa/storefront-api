@@ -1,0 +1,19 @@
+# Folders
+node_modules
+migrations
+public
+build
+spec
+dist
+old_src
+scripts
+
+#Files
+.env
+.gitignore
+.prettierrc
+.prettierignore
+package-lock.json
+package.json
+README.md
+tsconfig.json
