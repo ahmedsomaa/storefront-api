@@ -7,7 +7,7 @@ const usersRoutes = Router();
 usersRoutes
   .route('/')
   .get(useAuthentication, UsersHandler.findAll)
-  .post(useAuthentication, UsersHandler.create)
+  .post(UsersHandler.create)
   .put(useAuthentication, UsersHandler.update);
 usersRoutes.route('/auth').post(UsersHandler.authenticate);
 usersRoutes
