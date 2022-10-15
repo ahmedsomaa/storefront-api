@@ -92,7 +92,7 @@ this `NODE_ENV=dev`
 
 ### Coverage
 
-I have provided 70 unit tests that covers:
+I have provided 69 unit tests that covers:
 
 - pg database client.
 - each database model.
