@@ -34,7 +34,8 @@ const findById = async (req: Request, res: Response, next: NextFunction): Promis
 const create = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const created = await model.create(req.body as User);
-    res.status(200).json(new ServerResponse(created, null, 200));
+    const token = jwt.sign({ created }, secret);
+    res.status(200).json(new ServerResponse({ user: created, token }, null, 200));
   } catch (error) {
     next(error);
   }
