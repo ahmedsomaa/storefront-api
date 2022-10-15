@@ -55,7 +55,7 @@ This file acts as documentation for the API endpoints and database schema.
     }
     ```
 
-- Create - `token required`
+- Create
 
   - HTTP verb `POST`
   - Endpoint:- `/users`
@@ -70,15 +70,18 @@ This file acts as documentation for the API endpoints and database schema.
     }
     ```
 
-  - Response Body -- `User object`
+  - Response Body -- `User object with JWT Token`
 
     ```json
     {
       "data": {
-        "id": 8,
-        "email": "phyllis.vance@dm.com",
-        "first_name": "Phyllis",
-        "last_name": "Vance"
+        "user": {
+          "id": 9,
+          "email": "phyllis.vance@dm.com",
+          "first_name": "Phyllis",
+          "last_name": "Vance"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkIjp7ImlkIjo5LCJlbWFpbCI6InBoeWxsaXMudmFuY2VAZG0uY29tIiwiZmlyc3RfbmFtZSI6IlBoeWxsaXMiLCJsYXN0X25hbWUiOiJWYW5jZSJ9LCJpYXQiOjE2NjU4MTY5Mjd9.Nv5cDFcZctDHnr9Ek5R0GCnOzEBb6Smp5XslOD_nfxs"
       },
       "errors": null,
       "message": "OK"
