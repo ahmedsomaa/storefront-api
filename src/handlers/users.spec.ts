@@ -47,7 +47,6 @@ describe('-- Users Handler Test Suite', (): void => {
       const { status, body } = await request
         .post('/users')
         .set('Content-type', 'application/json')
-        .set('Authorization', bearerToken)
         .send({
           email: 'abernard@dm.com',
           first_name: 'Andy',
@@ -56,29 +55,12 @@ describe('-- Users Handler Test Suite', (): void => {
         });
       expect(status).toBe(200);
       const {
-        data: { id, email }
+        data: {
+          user: { id, email }
+        }
       } = body;
       expect(id).toBe(6);
       expect(email).toBe('abernard@dm.com');
-    });
-
-    it('should return 401 for invalid bearer token or no token', async (): Promise<void> => {
-      const { status, body } = await request
-        .post('/users')
-        .set('Content-type', 'application/json')
-        .send({
-          email: 'abernard@dm.com',
-          first_name: 'Andy',
-          last_name: 'Bernard',
-          password: 'nard_dog'
-        });
-      expect(status).toBe(401);
-      const {
-        data,
-        errors: { details }
-      } = body;
-      expect(data).toBe(null);
-      expect(details).toEqual("Either user didn't provide a token or token is invalid");
     });
   });
 
@@ -117,7 +99,7 @@ describe('-- Users Handler Test Suite', (): void => {
 
     it('should not update and return 401 for invalid bearer token or no token', async (): Promise<void> => {
       const { status, body } = await request
-        .post('/users')
+        .put('/users')
         .set('Content-type', 'application/json')
         .send({
           email: 'andy.bernard@dm.com',
