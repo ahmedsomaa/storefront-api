@@ -57,7 +57,7 @@ You need the following modules and dependencies installed to run this project:
 
 - Run `docker compose up` to get the postgresql container up and ready for development.
 - Access the posgresql instance on the docker container using `psql -U postgres`.
-- Create two databses one for development and one for testing by running `CREATE DATABSE <database_name>`. Make sure
+- Create two databses one for development and one for testing by running `CREATE DATABASE <database_name>`. Make sure
   to replace `<database_name>` with the database name.
 - Create a new databse role using `CREATE USER <user> WITH PASSWORD <password>`. Make sure to replace both `<user>` &
   `<password>` with the user name and password you want.
@@ -73,6 +73,8 @@ You need the following modules and dependencies installed to run this project:
   to use for most of the API endpoints.
   - email: __mscott@dm.com__, password: **date_mike**
   - email: __dshrute@dm.com__, password: **battlestar_galactica**
+
+> These users only work for the bcrypt secret provided in the example .env config above
 
 ## Unit tests
 
